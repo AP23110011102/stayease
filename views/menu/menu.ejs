@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+body {
+    background: #fff;
+    font-family: Arial, sans-serif;
+}
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+.menu-header h4 {
+    margin: 0;
+    color: #fe424d;
+    font-weight: bold;
+}
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+.menu-links a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #222;
+}
+.menu-links a:hover {
+    color: #fe424d;
+}
+</style>
+
+
+<!-- Menu Header -->
+<!-- <div class="menu-header">
+<h4><i class="fa-solid fa-compass me-2" style="color:#fe424d;"></i> StayEase</h4> -->
+<!-- Close button goes back -->
+<!-- <a href="/listings" class="btn btn-outline-dark btn-sm">Close ✕</a>
+</div> -->
+
+<!-- Menu Links -->
+<div class="menu-links">
+<a href="/listings">Explore</a>
+<a href="/listings/new">Wanderlust your home</a>
+<% if(!curruser) { %>
+    <a href="/signup">Sign up</a>
+    <a href="/login">Log in</a>
+<% } %>
+<% if(curruser) { %>
+    <a href="/logout">Log out</a>
+<% } %>
+</div>
